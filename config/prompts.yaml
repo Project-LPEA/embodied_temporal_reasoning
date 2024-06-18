@@ -1,0 +1,34 @@
+#CHECK!
+
+prompt_parser1: |
+  """
+
+  example_parsing  = [
+        {
+            "instruction" : "Point to the bottle that I just placed.",
+
+            "ground_truth" : {
+                "past": "the bottle that was placed",
+                "present": "Point to the bottle",
+                "future" : ""
+            },
+        },
+
+        {
+            "instruction" : "Help the person if he falls",
+            "ground_truth" : {
+                "past": "",
+                "present": "Watch out for a person to fall",
+                "future" : "Help the person"
+            },
+        },
+  ]
+  """
+
+  There is a robot that needs to take a human instruction and figure out what has happened in the past, what it needs to do right now, and what it needs to do in the future if something happens. Given the human instruction like , return a dictionary with 'past', 'present', and 'future' as keys. Follow the format in {{ example_parsing }}. Always return a single dictionary.
+
+prompt_parser2: |
+  """
+  Identify the object of interest in this and return its properties in one line as a sentence.
+  """
+
