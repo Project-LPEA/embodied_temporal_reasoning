@@ -1,0 +1,20 @@
+Instruction:Pick the object that was just placed
+Parser1 Output{'past': 'Identify the object that was just placed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: game controller
+GPT output: NO.
+
+Which game controller are you referring to: the one on the left, the one in the middle, or the one on the right?
+
+Count: 2
+LVLM output: game controller on the left
+GPT output: YES
+
+Parser2 Input: game controller on the leftYES
+Parser2 Output: game controller on the left
+
+ Bbox coordinates [66, 183, 198, 258]
+ IOU: 0.9517214087851207
+Number of correct cases: 1
+Accuracy: 100.0%

@@ -1,0 +1,19 @@
+Instruction:Pick the object that was placed
+Parser1 Output{'past': 'Identify the object that was placed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: cube
+GPT output: NO.
+Can you specify the color of the cube?
+
+Count: 2
+LVLM output: blue cube
+GPT output: YES
+
+Parser2 Input: blue cubeYES
+Parser2 Output: blue cube
+
+ Bbox coordinates [599, 353, 689, 463]
+ IOU: 1.0
+Number of correct cases: 19
+Accuracy: 63.33333333333333%

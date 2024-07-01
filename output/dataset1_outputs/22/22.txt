@@ -1,0 +1,20 @@
+Instruction:Pick the object that was placed last
+Parser1 Output{'past': 'Identify the last placed object', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: last placed cup on the table by robot
+GPT output: NO.
+
+Was the cup placed on the left side or the right side of the table?
+
+Count: 2
+LVLM output: Cup on the left side of the table
+GPT output: YES
+
+Parser2 Input: Cup on the left side of the tableYES
+Parser2 Output: cup on the left side of the table
+
+ Bbox coordinates [485, 225, 542, 291]
+ IOU: 0.0
+Number of correct cases: 14
+Accuracy: 63.63636363636363%

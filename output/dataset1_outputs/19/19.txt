@@ -1,0 +1,20 @@
+Instruction:Pick the object that was placed last
+Parser1 Output{'past': 'Identify the object that was placed last', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: Water bottle that was placed last
+GPT output: NO
+
+Can you tell me where the water bottle was placed in relation to the other objects?
+
+Count: 2
+LVLM output: water bottle on the table
+GPT output: YES
+
+Parser2 Input: water bottle on the tableYES
+Parser2 Output: water bottle on the table
+
+ Bbox coordinates [364, 71, 437, 270]
+ IOU: 0.9626016260162602
+Number of correct cases: 12
+Accuracy: 63.1578947368421%

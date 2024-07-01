@@ -1,0 +1,26 @@
+Instruction:Pick the object that replaced the blue bottle
+Parser1 Output{'past': 'Identify the object that replaced the blue bottle', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: replaced blue bottle
+GPT output: NO.
+
+What is the blue bottle replacing in the scene?
+
+Count: 2
+LVLM output: blue bottle
+GPT output: NO
+
+Which object on the table is the blue bottle replacing: the white cube or the red cube?
+
+Count: 3
+LVLM output: blue bottle replacing red cube on table
+GPT output: YES
+
+Parser2 Input: blue bottle replacing red cube on tableYES
+Parser2 Output: blue bottle replacing red cube on table
+
+ Bbox coordinates [1102, 65, 1277, 154]
+ IOU: 0.0
+Number of correct cases: 33
+Accuracy: 68.75%

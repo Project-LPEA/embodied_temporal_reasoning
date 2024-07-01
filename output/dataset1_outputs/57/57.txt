@@ -1,0 +1,32 @@
+Instruction:Pick the dirty object
+Parser1 Output{'past': 'Identify the dirty object', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: dirty towel
+GPT output: NO
+
+Which color towel are you referring to?
+
+Count: 2
+LVLM output: red towel
+GPT output: NO.
+
+Which object is closest to the red towel?
+
+Count: 3
+LVLM output: bucket closest to the red towel
+GPT output: NO.
+
+Which towel are you referring to? The pink one or the green one?
+
+Count: 4
+LVLM output: pink towel
+GPT output: YES
+
+Parser2 Input: pink towelYES
+Parser2 Output: pink towel
+
+ Bbox coordinates [408, 185, 619, 375]
+ IOU: 0.9811320754716981
+Number of correct cases: 40
+Accuracy: 70.17543859649122%

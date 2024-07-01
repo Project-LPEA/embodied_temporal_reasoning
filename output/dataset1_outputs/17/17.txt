@@ -1,0 +1,14 @@
+Instruction:Pick the object that was placed first
+Parser1 Output{'past': 'Identify the object that was placed first', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: game controller
+GPT output: YES
+
+Parser2 Input: game controllerYES
+Parser2 Output: game controller
+
+ Bbox coordinates [291, 289, 419, 382]
+ IOU: 0.93499884339579
+Number of correct cases: 10
+Accuracy: 58.82352941176471%

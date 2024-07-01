@@ -1,0 +1,32 @@
+Instruction:Pick the object that was the first to be placed
+Parser1 Output{'past': 'Identify the object that was the first to be placed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: First object placed in the video - a box
+GPT output: NO
+
+Could you specify the position or a distinguishing feature of the box?
+
+Count: 2
+LVLM output: box with a lid
+GPT output: NO
+
+Is the box located near a specific item, such as the cup or the cloth?
+
+Count: 3
+LVLM output: box near the cup
+GPT output: NO.
+
+Question: Is the box yellow?
+
+Count: 4
+LVLM output: yellow box
+GPT output: YES
+
+Parser2 Input: yellow boxYES
+Parser2 Output: yellow box
+
+ Bbox coordinates [730, 406, 821, 516]
+ IOU: 0.8402172124403489
+Number of correct cases: 25
+Accuracy: 67.56756756756756%

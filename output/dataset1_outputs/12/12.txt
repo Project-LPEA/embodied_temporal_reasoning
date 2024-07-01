@@ -1,0 +1,26 @@
+Instruction:Pick the object that was first placed
+Parser1 Output{'past': 'Identify the object that was first placed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: plastic cup
+GPT output: NO.
+
+Which plastic cup are you referring to (e.g., front left, back right)?
+
+Count: 2
+LVLM output: plastic cup used for drinking
+GPT output: NO.
+
+Question: Which plastic cup are you referring to: the front left, front right, back left, or back right?
+
+Count: 3
+LVLM output: front left plastic cup
+GPT output: YES
+
+Parser2 Input: front left plastic cupYES
+Parser2 Output: front left plastic cup
+
+ Bbox coordinates [163, 284, 220, 355]
+ IOU: 0.9247408742676881
+Number of correct cases: 8
+Accuracy: 66.66666666666666%

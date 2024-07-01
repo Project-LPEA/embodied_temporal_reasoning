@@ -1,0 +1,18 @@
+Instruction:Pick the object that was placed first
+Parser1 Output{'past': 'Identify the object that was placed first', 'present': 'Pick the object', 'future': ''}
+
+ Count: 1
+LVLM output: first placed object in the video
+GPT output: NO, can you please specify which object was placed first in the scene?
+
+Count: 2
+LVLM output: video game controller
+GPT output: YES
+
+Parser2 Input: video game controllerYES
+Parser2 Output: video game controller
+
+ Bbox coordinates [280, 286, 407, 378]
+ IOU: 0.9712164948453609
+Number of correct cases: 13
+Accuracy: 65.0%

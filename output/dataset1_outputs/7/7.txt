@@ -1,0 +1,25 @@
+Instruction:Pick the object that was dropped second
+Parser1 Output{'past': 'Identify the object that was dropped second', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: second object dropped - a pair of pants
+GPT output: NO. 
+
+Is the pair of pants the green object or the brown object?
+
+Count: 2
+LVLM output: pair of pants is green
+GPT output: NO.
+Is the green object the one closer to the person wearing blue jeans?
+
+Count: 3
+LVLM output: green object closer to the person wearing blue jeans
+GPT output: YES
+
+Parser2 Input: green object closer to the person wearing blue jeansYES
+Parser2 Output: green object closer to the person wearing blue jeans
+
+ Bbox coordinates [269, 106, 362, 151]
+ IOU: 0.8894623655913978
+Number of correct cases: 5
+Accuracy: 71.42857142857143%

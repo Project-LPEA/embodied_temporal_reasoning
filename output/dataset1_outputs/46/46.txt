@@ -1,0 +1,20 @@
+Instruction:Pick the bottle that was placed
+Parser1 Output{'past': 'Identify the bottle that was placed', 'present': 'Pick up', 'future': ''}
+
+ Count: 1
+LVLM output: water bottle
+GPT output: NO
+
+Which color is the water bottle?
+
+Count: 2
+LVLM output: blue water bottle
+GPT output: YES.
+
+Parser2 Input: blue water bottleYES.
+Parser2 Output: blue water bottle
+
+ Bbox coordinates [483, 113, 642, 435]
+ IOU: 0.9602628879686966
+Number of correct cases: 33
+Accuracy: 71.73913043478261%

@@ -1,0 +1,20 @@
+Instruction:Pick the object using which the table was cleaned
+Parser1 Output{'past': 'Identify the object used to clean the table', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: rag used to clean the table
+GPT output: NO
+
+Which color is the rag used to clean the table?
+
+Count: 2
+LVLM output: pink object
+GPT output: YES
+
+Parser2 Input: pink objectYES
+Parser2 Output: pink object
+
+ Bbox coordinates [407, 185, 616, 375]
+ IOU: 0.9904761904761905
+Number of correct cases: 41
+Accuracy: 70.6896551724138%

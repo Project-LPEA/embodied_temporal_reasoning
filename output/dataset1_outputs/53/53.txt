@@ -1,0 +1,38 @@
+Instruction:Pick the object using which water was poured
+Parser1 Output{'past': 'Identify the object that was used to pour water', 'present': 'Pick the object', 'future': ''}
+
+ Count: 1
+LVLM output: glass used to pour water
+GPT output: NO.
+
+Is the object positioned closer to the left side or the right side of the scene from the viewer's perspective?
+
+Count: 2
+LVLM output: object positioned closer to the right side
+GPT output: NO
+
+Is the object blue?
+
+Count: 3
+LVLM output: object that is not blue
+GPT output: NO.
+
+Is the object positioned closer to the left side or the right side of the scene from the viewer's perspective?
+
+Count: 4
+LVLM output: object closer to the right side from viewer's perspective
+GPT output: NO. 
+
+Is the object blue?
+
+Count: 5
+LVLM output: blue object viewed from robot's perspective
+GPT output: YES
+
+Parser2 Input: blue object viewed from robot's perspectiveYES
+Parser2 Output: blue object from robot's perspective
+
+ Bbox coordinates [942, 209, 1255, 532]
+ IOU: 0.0
+Number of correct cases: 36
+Accuracy: 67.9245283018868%

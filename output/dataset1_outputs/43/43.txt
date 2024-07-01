@@ -1,0 +1,26 @@
+Instruction:Pick the cloth that was dropped first
+Parser1 Output{'past': 'Identify the cloth that was dropped first', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: first cloth that was dropped is a shoe
+GPT output: NO.
+
+Which cloth was dropped first?
+
+Count: 2
+LVLM output: dropped towel
+GPT output: NO
+
+Is the towel pink or green?
+
+Count: 3
+LVLM output: green towel
+GPT output: YES
+
+Parser2 Input: green towelYES
+Parser2 Output: green towel
+
+ Bbox coordinates [288, 345, 628, 605]
+ IOU: 0.9923954372623575
+Number of correct cases: 30
+Accuracy: 69.76744186046511%

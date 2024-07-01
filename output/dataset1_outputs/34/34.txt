@@ -1,0 +1,20 @@
+Instruction:Pick the object that was placed first
+Parser1 Output{'past': 'Identify the object that was placed first', 'present': 'Pick the object', 'future': ''}
+
+ Count: 1
+LVLM output: first placed plastic bottle
+GPT output: NO.
+
+Is the plastic bottle you are referring to the green one on the left?
+
+Count: 2
+LVLM output: green plastic bottle on the left
+GPT output: YES
+
+Parser2 Input: green plastic bottle on the leftYES
+Parser2 Output: green plastic bottle on the left
+
+ Bbox coordinates [355, 185, 554, 528]
+ IOU: 0.9537790697674419
+Number of correct cases: 21
+Accuracy: 61.76470588235294%

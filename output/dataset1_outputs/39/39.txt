@@ -1,0 +1,20 @@
+Instruction:Pick the object that was placed
+Parser1 Output{'past': 'Identify the object that was placed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: toy
+GPT output: NO
+
+Is the toy the yellow cube?
+
+Count: 2
+LVLM output: yellow cube
+GPT output: YES
+
+Parser2 Input: yellow cubeYES
+Parser2 Output: yellow cube
+
+ Bbox coordinates [805, 344, 899, 452]
+ IOU: 0.9609850313858039
+Number of correct cases: 27
+Accuracy: 69.23076923076923%

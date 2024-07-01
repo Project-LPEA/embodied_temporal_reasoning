@@ -1,0 +1,20 @@
+Instruction:Pick the object whose orientation was changed
+Parser1 Output{'past': 'Identify the object whose orientation was changed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: gamepad
+GPT output: NO.
+
+Which gamepad are you referring to: the left one or the right one?
+
+Count: 2
+LVLM output: left gamepad
+GPT output: YES
+
+Parser2 Input: left gamepadYES
+Parser2 Output: left gamepad
+
+ Bbox coordinates [73, 201, 170, 293]
+ IOU: 0.9119509703779367
+Number of correct cases: 15
+Accuracy: 60.0%

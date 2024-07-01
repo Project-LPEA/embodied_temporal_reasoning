@@ -1,0 +1,26 @@
+Instruction:Pick the cup into which the water was poured
+Parser1 Output{'past': 'Identify the cup that the water was poured into', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: not related to the question
+GPT output: NO.
+
+Can you specify the position of the object you are referring to? (e.g., top left, bottom right)
+
+Count: 2
+LVLM output: cup placed on the table
+GPT output: NO.
+
+Which cup placed on the table are you referring to - the one closest to the left, the one furthest to the right, the one closest to the bottom, or the one near the middle?
+
+Count: 3
+LVLM output: cup with a lid
+GPT output: YES
+
+Parser2 Input: cup with a lidYES
+Parser2 Output: cup with a lid
+
+ Bbox coordinates [259, 0, 327, 125]
+ IOU: 0.0
+Number of correct cases: 41
+Accuracy: 68.33333333333333%

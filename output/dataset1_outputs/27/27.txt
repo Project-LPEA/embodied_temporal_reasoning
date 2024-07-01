@@ -1,0 +1,18 @@
+Instruction:Pick the object that was rotated
+Parser1 Output{'past': 'Identify the object that was rotated', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: rotated video game controller
+GPT output: NO. Can you specify the position of the rotated video game controller (left, center, or right)?
+
+Count: 2
+LVLM output: rotated video game controller on the left
+GPT output: YES
+
+Parser2 Input: rotated video game controller on the leftYES
+Parser2 Output: rotated video game controller on the left
+
+ Bbox coordinates [48, 243, 140, 335]
+ IOU: 0.0
+Number of correct cases: 16
+Accuracy: 59.25925925925925%

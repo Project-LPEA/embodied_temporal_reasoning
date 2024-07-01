@@ -1,0 +1,32 @@
+Instruction:Pick the object that replaced the green bottle
+Parser1 Output{'past': 'Identify the object that replaced the green bottle', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: Cube that replaced the green bottle
+GPT output: NO. 
+
+Question: Where was the green bottle located before it was replaced?
+
+Count: 2
+LVLM output: green bottle on the table
+GPT output: NO. 
+
+Where exactly on the table was the green bottle located before it was replaced?
+
+Count: 3
+LVLM output: Green bottle on the left side of the table
+GPT output: NO.
+
+Could you specify which object replaced the green bottle?
+
+Count: 4
+LVLM output: red cube
+GPT output: YES
+
+Parser2 Input: red cubeYES
+Parser2 Output: red cube
+
+ Bbox coordinates [805, 372, 910, 491]
+ IOU: 0.0
+Number of correct cases: 33
+Accuracy: 70.2127659574468%

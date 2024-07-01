@@ -1,0 +1,14 @@
+Instruction:Pick the object into which water was poured
+Parser1 Output{'past': 'Identify the object into which water was poured', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: water bottle
+GPT output: YES. The robot will be able to identify the unique object the human being is referring to. In the scene, there is only one clear water bottle, which is the tall green bottle on the left side of the table.
+
+Parser2 Input: water bottleYES. The robot will be able to identify the unique object the human being is referring to. In the scene, there is only one clear water bottle, which is the tall green bottle on the left side of the table.
+Parser2 Output: tall green water bottle on the left side of the table
+
+ Bbox coordinates [174, 84, 408, 394]
+ IOU: 0.0
+Number of correct cases: 34
+Accuracy: 68.0%

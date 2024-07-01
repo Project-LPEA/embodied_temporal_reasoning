@@ -1,0 +1,20 @@
+Instruction:Pick the object that was dropped first
+Parser1 Output{'past': 'Identify the object that was dropped first', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: undershirt
+GPT output: NO.
+
+Is the undershirt the brown item closest to the camera or the green item farther away?
+
+Count: 2
+LVLM output: Farthest item from camera is green and closest item is brown
+GPT output: YES
+
+Parser2 Input: Farthest item from camera is green and closest item is brownYES
+Parser2 Output: green item farthest from camera and brown item closest to camera
+
+ Bbox coordinates [268, 106, 360, 148]
+ IOU: 0.0
+Number of correct cases: 4
+Accuracy: 66.66666666666666%

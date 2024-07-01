@@ -1,0 +1,20 @@
+Instruction:Pick the object that was placed
+Parser1 Output{'past': 'Identify the object that was placed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: coffee cup
+GPT output: NO.
+
+Which coffee cup are you referring to: the one on the left or the one on the right?
+
+Count: 2
+LVLM output: coffee cup on the left
+GPT output: YES.
+
+Parser2 Input: coffee cup on the leftYES.
+Parser2 Output: coffee cup on the left
+
+ Bbox coordinates [279, 275, 399, 405]
+ IOU: 0.944
+Number of correct cases: 17
+Accuracy: 60.71428571428571%

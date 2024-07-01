@@ -1,0 +1,53 @@
+Instruction:Pick the object that was placed second
+Parser1 Output{'past': 'Identify the object that was placed second', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: Second-placed object in the video which is a drink
+GPT output: NO.
+
+Question: Are we counting the objects from left to right or from right to left from the viewer's perspective?
+
+Count: 2
+LVLM output: perspective of counting objects
+GPT output: NO. From which direction are we counting the objects: left to right or right to left?
+
+Count: 3
+LVLM output: Objects counted from left to right
+GPT output: NO.
+
+Question: Which specific object position (e.g., first, second, third, or fourth) are you referring to when counting from left to right?
+
+Count: 4
+LVLM output: coffee cup
+GPT output: NO.
+
+Question to uniquely identify the object: 
+
+"Which position is the coffee cup in: front left, front right, back left, or back right from your perspective?"
+
+Count: 5
+LVLM output: video perspective
+GPT output: NO. 
+
+Which position is the object in: front left, front right, back left, or back right from your perspective?
+
+Count: 6
+LVLM output: object facing right from robot's perspective
+GPT output: NO. 
+Is the object you're referring to facing right from the robot's perspective positioned in the front row or the back row of the scene?
+
+Count: 7
+LVLM output: object facing right from the robot's perspective in the front row
+GPT output: NO
+
+Question to ask: Is the object facing right the front left or the front right from your perspective?
+
+Parser2 Input: object facing right from the robot's perspective in the front rowNO
+
+Question to ask: Is the object facing right the front left or the front right from your perspective?
+Parser2 Output: Object facing right from the robot's perspective in the front row
+
+ Bbox coordinates [164, 284, 220, 356]
+ IOU: 0.0
+Number of correct cases: 41
+Accuracy: 67.21311475409836%

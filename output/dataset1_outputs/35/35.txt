@@ -1,0 +1,14 @@
+Instruction:Pick the object that was placed second
+Parser1 Output{'past': 'Identify the object that was placed second', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: a cup on the table
+GPT output: YES
+
+Parser2 Input: a cup on the tableYES
+Parser2 Output: cup on the table
+
+ Bbox coordinates [719, 322, 834, 459]
+ IOU: 0.8905547226386806
+Number of correct cases: 23
+Accuracy: 65.71428571428571%

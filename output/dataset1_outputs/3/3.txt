@@ -1,0 +1,36 @@
+Instruction:Pick the object that was just placed
+Parser1 Output{'past': 'Identify the object that was just placed', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: piece of cloth on the table
+GPT output: NO. Can you specify the color of the piece of cloth on the table?
+
+Count: 2
+LVLM output: blue piece of cloth on the table
+GPT output: NO.
+
+Can you specify if the blue piece of cloth is on the left side or the right side of the table from your perspective?
+
+Count: 3
+LVLM output: blue cloth on the left side of the table
+GPT output: NO.
+
+Is the cloth you're referring to the one on the left side from your perspective or from the robot's perspective?
+
+Count: 4
+LVLM output: cloth on the left side from the robot's perspective
+GPT output: NO.
+
+Can you specify the color of the cloth you are referring to?
+
+Count: 5
+LVLM output: gray cloth
+GPT output: YES
+
+Parser2 Input: gray clothYES
+Parser2 Output: gray cloth
+
+ Bbox coordinates [293, 237, 440, 433]
+ IOU: 0.9849246231155779
+Number of correct cases: 2
+Accuracy: 66.66666666666666%

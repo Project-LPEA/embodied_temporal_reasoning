@@ -1,0 +1,20 @@
+Instruction:Point to the object that was placed second
+Parser1 Output{'past': 'Identify the object that was placed second', 'present': 'Point to', 'future': ''}
+
+ Count: 1
+LVLM output: second object in the video
+GPT output: NO.
+
+Could you please tell me the color or shape of the second object in the video?
+
+Count: 2
+LVLM output: second object is white
+GPT output: YES
+
+Parser2 Input: second object is whiteYES
+Parser2 Output: second white object
+
+ Bbox coordinates [485, 224, 542, 291]
+ IOU: 1.0
+Number of correct cases: 14
+Accuracy: 66.66666666666666%

@@ -1,0 +1,26 @@
+Instruction:Pick the object into which water was poured from the green bottle
+Parser1 Output{'past': 'Identify the object into which water was poured from the green bottle', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: cup into which water was poured from the green bottle
+GPT output: NO. 
+
+Can you specify the position of the cup relative to the viewer (left, middle, or right)?
+
+Count: 2
+LVLM output: left
+GPT output: NO.
+
+Can you specify if there's anything unique about the cup on the left? For instance, was water poured into it from the green bottle?
+
+Count: 3
+LVLM output: cup on the left filled with water using a green bottle
+GPT output: YES
+
+Parser2 Input: cup on the left filled with water using a green bottleYES
+Parser2 Output: cup on the left filled with water using a green bottle
+
+ Bbox coordinates [51, 223, 106, 290]
+ IOU: 0.9358942379645797
+Number of correct cases: 9
+Accuracy: 64.28571428571429%

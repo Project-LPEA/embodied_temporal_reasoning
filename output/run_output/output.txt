@@ -1,0 +1,9 @@
+Parser 1 Output: {'past': 'Identify the object that was just placed', 'present': 'Pick', 'future': ''}
+
+Count: 1
+LVLM output: The object that was just placed is a cup of coffee.
+GPT output: YES. The context and image provide enough information to uniquely identify the object as the cup of coffee, which can be seen on the right side of the desk, near the woman's hand and next to the keyboard.
+
+Parser 2 Output: cup of coffee on the right side of the desk, near the woman's hand and next to the keyboard
+
+Grounding Output: [419, 295, 481, 400]

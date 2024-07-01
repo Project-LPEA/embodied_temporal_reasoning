@@ -1,0 +1,20 @@
+Instruction:Remove the object into which water was poured
+Parser1 Output{'past': 'Identify the object into which water was poured', 'present': 'Remove', 'future': ''}
+
+ Count: 1
+LVLM output: glass that received water from the robot
+GPT output: NO. 
+
+Can you specify which one of the four glasses is receiving water from the robot?
+
+Count: 2
+LVLM output: glass on the left
+GPT output: YES
+
+Parser2 Input: glass on the leftYES
+Parser2 Output: glass on the left
+
+ Bbox coordinates [135, 223, 186, 286]
+ IOU: 0.0
+Number of correct cases: 7
+Accuracy: 63.63636363636363%

@@ -1,0 +1,35 @@
+Instruction:Pick the cloth that was dropped second
+Parser1 Output{'past': 'Identify the cloth that was dropped second', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: Second dropped cloth
+GPT output: NO.
+
+Can you clarify which cloth was dropped first?
+
+Count: 2
+LVLM output: towel that was dropped first
+GPT output: NO, the robot cannot identify which cloth was dropped first solely based on the image.
+
+Question: Can you describe the color of the towel that was dropped first?
+
+Count: 3
+LVLM output: No identifiable object
+GPT output: NO. 
+Can you describe the location or appearance of the object you are referring to?
+
+Count: 4
+LVLM output: pocket on a table
+GPT output: NO, can you please describe the color or shape of the pocket?
+
+Count: 5
+LVLM output: green pocket
+GPT output: YES
+
+Parser2 Input: green pocketYES
+Parser2 Output: green pocket
+
+ Bbox coordinates [288, 345, 628, 605]
+ IOU: 0.0
+Number of correct cases: 30
+Accuracy: 68.18181818181817%

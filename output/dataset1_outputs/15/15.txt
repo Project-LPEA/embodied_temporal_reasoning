@@ -1,0 +1,18 @@
+Instruction:Pick the object into which water was poured from the orange bottle
+Parser1 Output{'past': 'Identify the object that water was poured into from the orange bottle', 'present': 'Pick', 'future': ''}
+
+ Count: 1
+LVLM output: cup that the water was poured into
+GPT output: NO. Could you specify which bottle the water was poured from: the one on the left or the one on the right?
+
+Count: 2
+LVLM output: bottle on the left
+GPT output: YES
+
+Parser2 Input: bottle on the leftYES
+Parser2 Output: bottle on the left
+
+ Bbox coordinates [74, 0, 145, 121]
+ IOU: 0.0
+Number of correct cases: 9
+Accuracy: 60.0%
