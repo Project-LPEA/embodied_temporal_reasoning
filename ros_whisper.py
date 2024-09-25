@@ -34,7 +34,6 @@ class RosWhisper():
 
         # IP addr and port number of the server running the whisper model
         self.host = "10.237.20.209"
-        #self.host = "192.168.131.11"
         self.port = 65430
         self.data_buffer = []
         self.q = queue.Queue()

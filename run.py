@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 
-"""Run file to execute the temporal reasoning pipeline. The parameters
+"""Run file to execute the temporal reasoning pipeline using LITA. The parameters
 of the pipeline can be set by passing arguments to this file.
 """
 
 # Library imports
 import argparse
 import yaml
-import os
 import pathlib
-from src import temporal_reasoning
-# from . import ros_whisper
+from src import temporal_reasoner
+from src.temporal_reasoner import TemporalReasoner
 import rospy
-import multiprocessing
+
 
 def load_params():
     """Loads the parameter
@@ -59,17 +58,20 @@ def update_params(args):
         params['host_ip'] = args.host_ip
     if args.port != None:
         params['port'] = args.port
-    if args.width != None:
-        params['width'] = args.width
-    if args.height != None:
-        params['height'] = args.height
-
+    if args.video_length != None:
+        params['video_length'] = args.video_length
+    if args.output_folder_path != None:
+        params['output_folder_path'] = args.output_folder_path
+    if args.pipeline_path != None:
+        params['pipeline_path'] = args.pipeline_path
+    
 
 
 if __name__ == "__main__":
-    """main function which accepts the arguments and sets appropriate variables
     """
-    print("Running Main")
+    main function which accepts the arguments and sets appropriate variables
+    """
+
     prompts = load_prompts()
     params = load_params()
     parser = argparse.ArgumentParser()
@@ -77,9 +79,9 @@ if __name__ == "__main__":
     parser.add_argument("--openai_api_key")
     parser.add_argument("--host_ip")
     parser.add_argument("--port")
-    parser.add_argument("--width")
-    parser.add_argument("--height", \
-                        help="height of frame")
+    parser.add_argument("--video_length")
+    parser.add_argument("--output_folder_path")
+    parser.add_argument("--pipeline_path")
     
     args = parser.parse_args()
     update_params(args)
@@ -87,11 +89,9 @@ if __name__ == "__main__":
     # First run whisper
     # Run the pipeline
 
-    print("ros node TR done")
-    temporal_reasoner = temporal_reasoning.TemporalReasoner()
-    print("Temporal Reasoning done")
+
+    temporal_reasoner = TemporalReasoner()
     temporal_reasoner.subscribers(params, prompts)
-    print("Sub done")
     rospy.spin()
 
 
