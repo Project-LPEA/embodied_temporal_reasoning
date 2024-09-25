@@ -1,21 +1,22 @@
 #!/usr/bin/env python3   
 
-import numpy
+# import numpy
 import socket
-import rospy
-from std_msgs.msg import String
-import openai
+# import rospy
+# from std_msgs.msg import String
+# import openai
 import cv2 as cv
 import pickle
-from sensor_msgs.msg import Image, CompressedImage
-from cv_bridge import CvBridge
-import sys
+# from sensor_msgs.msg import Image, CompressedImage
+# from cv_bridge import CvBridge
+# import sys
 import numpy as np
-import time
+# import time
 import json
-from PIL import Image
+# from PIL import Image
 import ast
 from openai import OpenAI
+# import os
 
 
 
@@ -54,6 +55,7 @@ def send_msg_to_server(image, recv_query, output_path):
         
         return scaled_bbox_coords
 
+
 def draw_bbox(image_size, image_array, bbox_coords, output_path):
         
         """ Function to draw bounding box coordinates on image
@@ -76,13 +78,8 @@ def draw_bbox(image_size, image_array, bbox_coords, output_path):
         scaled_bbox_coords = [x1, y1, x2, y2]
         image_array = np.array(image_array)
         cv.rectangle(image_array, (x1, y1), (x2, y2), color, thickness)
-        save_img = output_path
-        cv.imwrite(save_img, image_array)
+        cv.imwrite(output_path, image_array)
         return scaled_bbox_coords
-
-
-
-
 
 
 def filter_object_name_list_from_dino(image_size, image_array, bbox_string, output_path):
@@ -117,4 +114,25 @@ def filter_object_name_list_from_dino(image_size, image_array, bbox_string, outp
         scaled_bbox_coords = draw_bbox(image_size, image_array, bbox_coords, output_path)
         print("Scaled Bbox Coords: ", scaled_bbox_coords)
         return scaled_bbox_coords
+
+
+def extract_last_frame(video_path):
+        
+        """ 
+        Function to extract last frame from input video
+
+        """
+
+        print(video_path)
+        
+        input_list = []
+        
+        cap = cv.VideoCapture(video_path)
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                break
+            input_list.append(frame)
+        cap.release()
+        return input_list[-1]
 

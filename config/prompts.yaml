@@ -1,6 +1,5 @@
 
-
-prompt_parser1: |
+prompt_parser_fact1: |
   """
 
   example_parsing  = [
@@ -43,83 +42,246 @@ prompt_parser1: |
   There is a robot that needs to take a human instruction and figure out what has happened in the past, what it needs to do right now, and what it needs to do in the future if something happens. Given the human instruction like , return a dictionary with 'past', 'present', and 'future' as keys. Follow the format in {{ example_parsing }}. Always return a single dictionary with keys 'past', 'present', and 'future'. 
 
   """
-
   
-prompt_parser2: |
-  """
-  example_parsing = {
-    {
-        "prompt" : The answer is "Is it the second cup from the left?".YES. The context "Is it the second cup from the left?" provides enough information to uniquely identify the cup in question in the given image.
-
-        "output" : second cup from the left
-    }
-
-    {
-        "prompt" : The answer is leftmost. YES. It is the leftmost cup.
-
-        "output" : leftmost cup
-    }
-  }
-
-  Identify the object of interest in the prompt given and return its properties in one line as a sentence. Follow the format in {{ example_parsing }}. Always return a single dictionary with keys 'prompt' and 'output'. Return only a dictionary and no other text.
-
+prompt_parser1: |
   """
 
-baseprompt_lvlm: |
+  example_parsing  = [
+        {
+            "instruction" : "Point to the bottle that I just placed.",
+
+            "ground_truth" : {
+                "temporal_question": "When is placing by the person happening in the video? Give the exact timestamp.",
+                "action": "Point to",
+                "object" : "the bottle that was placed",
+                "interaction": "placing"
+            },
+        },
+        {
+            "instruction" : "Remove the object that was first eaten",
+            "ground_truth" : {
+                "temporal_question": "When is eating of first object by the person happening in the video? Give the exact timestamp.",
+                "action": "Remove",    
+                "object" : "object eaten by person",
+                "interaction": "eating by person"
+            },
+        },
+        {
+            "instruction" : "Remove the object that was placed last",
+            "ground_truth" : {
+                "temporal_question": "When is placing of last object by the person happening in the video? Give the exact timestamp.",
+                "action": "Remove",    
+                "object" : "object placed",
+                "interaction": "placing"
+            },
+        },
+           {
+            "instruction" : "Where is the apple?",
+            "ground_truth" : {
+                "temporal_question": "When was the apple last seen? Give the exact timestamp.",
+                "action": "",    
+                "object" : "apple",
+                "interaction" : "human-interaction happening with apple"
+            },
+        },
+        {
+            "instruction" : "Identify the object that was used for cleaning second by the girl",
+            "ground_truth" : {
+                "temporal_question": "When is the cleaning using a second object by the girl happening in the video? Give the exact timestamp.",
+                "action": "Identify",    
+                "object" : "object used for cleaning by the girl",
+                "interaction": "cleaning by the girl"
+            },
+        },
+
+        {
+            "instruction" : "Remove the cloth that was used by the boy",
+            "ground_truth" : {
+                "temporal_question": "When is the using of cloth by the boy happening in the video? Give the exact timestamp.",
+                "action": "Remove",    
+                "object" : "cloth used by boy",
+                "interaction": human-interaction with cloth by the boy
+            },
+        },
+        {
+            "instruction" : "Retrieve the bottle that was filled first by the girl",
+            "ground_truth" : {
+                "temporal_question": "When is filling of the first bottle happening in the video? Give the exact timestamp.",
+                "action": "Retrieve",    
+                "object" : "bottle that was filled by the girl",
+                "interaction" : "bottle filling by the girl"
+            },
+        },
+     
+        {
+            "instruction" : "Push the bottle",
+            "ground_truth" : {
+                "temporal_question": "When was the bottle last seen? Give the exact timestamp.",
+                "action": "",    
+                "object" : "bottle",
+                "interaction" : "human-interaction happening with bottle"
+            },
+        },
+  ]
+
+  There is a robot that needs to take a human instruction and formulate a temporal question as per instruction, what action to take and the object of interest. Given the human instruction, return a dictionary with 'temporal_question', 'action', 'object', and 'interaction' as keys. For the 'object' and 'interaction' keys, remove the temporal aspect and clues such as 'at 2nd second' or 'last'. Return answer in JSON format always. 
+  """
+
+
+
+prompt_ImageUnderstander1: |
 
     """
-    . The video is from a robot's perspective. Return all answers from the robot's perspective. 
+        INTERACTION: 
 
     """
 
+prompt_ImageUnderstander2: |
 
-# baseprompt_llm: |
+    """
+        OBJECT:  
+    """
+
+# prompt_ImageUnderstander3: |
+
+#     """
+#     From the given images, identify with which single OBJECT the INTERACTION is happening. Give enough details to uniquely identify the object such as EXACT specific spatial properties, color, etc. 
+#     There is a ROBOT vieweing this scene. Please return your answer from the ROBOT's perspective. 
+#     Give enough details about the object with respect to the last image you receive. 
+#     Pick the options from the last frame give to you. Give the label and color of the object label from the last frame.
 
 #     """
 
-#     There is a phrase grounding model that needs to uniquely ground a specific object which will help a robot interact with that object.\
-#                     Given this image, is the context enough of information to uniquely identify an object? Reply with a YES if that object can be distinguished uniquely with the given context. \
-#                     If not, ask more questions to uniquely identify the object using its spatial location or other properties. If object is not present, ask more questions to get the right object. \
-#                     Example - Context: The object that was placed was a bottle. Question: Which one was it? The rightmost, second from right, third from left, right and second from top, right and bottommost, or?
 
-#     """
-
-# baseprompt_llm: |
-
-#     """
-#     There is a phrase grounding model that needs to uniquely ground a specific object which will help a robot interact with that object.\
-#                     Given this image, is the context enough of information to uniquely identify an object? Reply with a YES if that object can be distinguished uniquely with the given CONTEXT and the image.  \
-#                     If not ask one question with options to uniquely identify the object.
-#     """
-
-
-
-
-# baseprompt_llm_1: |
-
-#     " Will a robot be able to identify what object(it should be unique) the human being is referring to given the scene? The huma being says:  "
-
-baseprompt_llm_1: |
-   
-
-   Will a robot be able to identify what object (it should be unique) the human being is referring to given the scene? The human being says:
-   
-
-
-baseprompt_llm_2: |
-   
-
-   Scenario: there is a robot which needs to understand what single object in a scene a human being is referring to. 
-   Reply with a YES or NO. If the answer is NO, ask one question to uniquely identify the object. \
-   Anything that the human being says is from the viewer's perspective. 
-   
-
-   
-
-prompt_questionExtractor: |
+prompt_ImageUnderstander3: |
 
     """
+    From the given images, identify with which single OBJECT the INTERACTION happened. 
+    The last image given to you has visual options. Pick the right object number with which the INTERACTION is happening. 
+    Return object label. Justify your answer.
+    """ 
 
-     Extract the main question from the given text in the form of a question. 
+
+prompt_ObjectExtractor: |
 
     """
+    From the given images, identify with which single OBJECT the INTERACTION happened. Return that object only.
+    """ 
+
+# prompt_ImageUnderstander3: |
+
+#     """
+#     From the given images, identify with which single OBJECT the INTERACTION happened. 
+#     The last image given to you has visual options. Pick the right object number with which the INTERACTION is happening. 
+#     If the object is not present in the last frame, then pick the object label of the object that is closely associated with the intended object.
+#     Return your answer in the format 'Object 1' or 'Object 2'. Justify your answer.
+#     """ 
+
+# prompt_ImageUnderstander2: |
+
+#     """
+#         . Ignore words like first, second etc and just focus on interaction and object difference between two images. Please return your answer from ROBOT's perspective and make sure that you give enough details to uniquely identify the object. Please give spatial properties to uniquely identify the object. 
+
+#     """
+
+
+# prompt_parser2: |
+#   """
+#   example_parsing  = [
+#         {
+#             "input" : "The object that was picked up is the cup on the left. It had been rotated from its original position in the first image to pour water into it and kept back to face the viewer more directly in the subsequent images. This object stands out because it has been moved while the other two cups, to its right, have remained in their original positions. The left cup is characterized by its brown body and white head.",
+
+#             "output" : "White and Brown cup on the left",
+#         },
+
+#         {
+#             "input" : "Object 7 with orange label. The object of interest is a blue bottle, positioned second from the left, recently placed on the table, between two other bottles  - one by a pink cloth and one with solid residue.",
+#             "output" : "Object 7 with orange label, objecy is blue bottle positioned second from left" ,
+#         },
+#         {
+#             "instruction" : "The object that was picked up is a white and black controller located to the left of the white and pink thermos bottle in the images. This object is visible exactly in the middle between the tall thermos bottle and a teal-colored cup.",
+#             "ground_truth" : "White and black controller, left of white and pink bottle",
+#         },
+#   ]
+    
+#     Identify the Object Label and the Label Color. Also identify object of interest in the prompt given and return its properties in brief. Follow the format in {{ example_parsing }}.
+
+#   """
+
+prompt_parser_object: |
+  """
+  example_parsing  = [
+        {
+            "input" : "The object that was picked up is the cup on the left. It had been rotated from its original position in the first image to pour water into it and kept back to face the viewer more directly in the subsequent images. This object stands out because it has been moved while the other two cups, to its right, have remained in their original positions. The left cup is characterized by its brown body and white head.",
+
+            "output" : "cup",
+        },
+
+        {
+            "input" : " The object using which water was poured is a bottle near the blue cup.",
+            "output" : "bottle" ,
+        },
+        {
+            "input" : "The object that was picked up is a white and black controller located to the left of the white and pink thermos bottle in the images. This object is visible exactly in the middle between the tall thermos bottle and a teal-colored cup.",
+            "output" : "controller",
+        },
+        {
+            "input" : "The object with which the interaction is happening is a medicine that is location behind the bottle",
+            "output" : "bottle",
+        },
+        {
+            "input" : "The object with which the interaction is happening is a medicine that is location behind the pink Adidas bottle",
+            "output" : "bottle",
+        },
+        {
+            "input" : "The object that was just kept is a controller inside the basket,
+            "output" : "basket",
+        },
+        {
+            "input" : "The object using which the water was poured is kept inside a black bag",
+            "output" : "black bag",
+        },
+  ]
+    
+    Idenitfy the object of interest from the sentence. Follow the format in {{ example_parsing }} giving both input and output always. Return a single dictionary with keys 'input' and 'output'.
+  """
+
+
+prompt_parser_object_label: |
+  """
+  example_parsing  = [
+
+        {
+            "input" : "The object that was picked up is the cup on the left, lebelled Object 1. It had been rotated from its original position in the first image to pour water into it and kept back to face the viewer more directly in the subsequent images. This object stands out because it has been moved while the other two cups, to its right, have remained in their original positions. The left cup is characterized by its brown body and white head.",
+
+            "output" : "Object 1",
+        },
+
+        {
+            "input" : "Object 7 with orange label. The object of interest is a blue bottle, positioned second from the left, recently placed on the table, between two other bottles  - one by a pink cloth and one with solid residue.",
+            "output" : "Object 7" ,
+        },
+        {
+            "input" : "The object that was picked up is a white and black controller located to the left of the white and pink thermos bottle in the images. This object is visible exactly in the middle between the tall thermos bottle and a teal-colored cup. This object is labelled Object 48.",
+            "output" : "Object 48",
+        },
+        {
+            "input" : "The object that was picked up is a white and black controller located to the left of the white and pink thermos bottle in the images. This object is visible exactly in the middle between the tall thermos bottle and a teal-colored cup. This object is labelled Object 4.",
+            "output" : "Object 4",
+        },
+        {
+            "input" : "The object that was picked up is a white and black controller located to the left of the white and pink thermos bottle in the images. This object is visible exactly in the middle between the tall thermos bottle and a teal-colored cup. This object is labelled Object 8.",
+            "output" : "Object 8",
+        },
+        {
+            "input" : "The object that was picked up is a white and black controller located to the left of the white and pink thermos bottle in the images. This object is visible exactly in the middle between the tall thermos bottle and a teal-colored cup. This object is labelled Object 3.",
+            "output" : "Object 3",
+        },  
+        
+
+  ]
+    
+    Identify the Object Label. Return answer in JSON format always. 
+    Return a single dictionary keys 'input' and 'output' only. Make sure to give only Object Label from last image in 'output'.
+  """
+

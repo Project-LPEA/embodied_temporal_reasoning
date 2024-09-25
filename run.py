@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
-"""Run file to execute the temporal reasoning pipeline. The parameters
+"""Run file to execute the temporal reasoning pipeline using LITA. The parameters
 of the pipeline can be set by passing arguments to this file.
 """
 
 # Library imports
 import argparse
 import yaml
-import os
 import pathlib
 from src import temporal_reasoner
+from src.temporal_reasoner import TemporalReasoner
 import rospy
 
 
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     # Run the pipeline
 
 
-    temporal_reasoner = temporal_reasoner.TemporalReasoner()
+    temporal_reasoner = TemporalReasoner()
     temporal_reasoner.subscribers(params, prompts)
     rospy.spin()
 

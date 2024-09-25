@@ -1,20 +1,20 @@
 #OpenAI API Key
 
-openai_api_key: "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"
+openai_api_key: #INSERT OPENAI API KEY HERE
 
-#host, port no.
+#CogVLM2: host, port no.
+cogvlm2_host_ip: #INSERT CogVLM2 HOST IP ADDRESS HERE
+cogvlm2_port: #INSERT CogVLM2 PORT NUMBER
 
-host_ip: "10.237.23.193"
-port: 65440
-
-# Output folder path
-
-output_folder_path: "/home/nivi_nath/tmp_reason_ws/src/driver_codes/fm_temporal_reasoning/output/run_output/"
+#SAM2: host, port no.
+sam2_host_ip: #INSERT SAM2 HOST IP ADDRESS HERE
+sam2_port: #INSERT SAM2 PORT NUMBER 
 
 # main pipeline path 
-
-pipeline_path: '/home/nivi_nath/tmp_reason_ws/src/driver_codes/fm_temporal_reasoning/'
+pipeline_path: #INSERT PIPELINE PATH HERE
 
 # Length of recorded action video
-
 video_length: 5
+
+#Dataset Path
+dataset_folder_path: #DOWNLOAD DATASET FROM DATASET LINK AND INSERT IT HERE
